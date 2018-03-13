@@ -1,0 +1,7 @@
+---
+- hosts: jenkinsservers
+  become: true
+  roles:
+    - timezone
+    - java
+    - jenkins

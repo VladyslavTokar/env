@@ -1,0 +1,9 @@
+---
+- maven_artifact:
+    group_id: "{{ mvn_group_id }}"
+    artifact_id: "{{ mvn_artifact_id }}"
+    repository_url: "{{ mvn_repo_url }}"
+    extension: war
+    username: "{{ mvn_repo_user }}"
+    password: "{{ mvn_repo_pass }}"
+    dest: "{{ tc_webapp_dir }}/ROOT.war"

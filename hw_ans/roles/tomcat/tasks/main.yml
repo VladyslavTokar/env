@@ -1,0 +1,14 @@
+---
+- name: ensure "tomcat" present
+  yum:
+    name: tomcat
+    state: present
+  notify:
+    - start tomcat
+- name: copy "hello-world.war" to ROOT
+  copy:
+    src: hello-world.war
+    dest: /usr/share/tomcat/webapps/ROOT.war
+    owner: root
+    group: root
+    mode: 0755

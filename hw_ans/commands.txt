@@ -1,0 +1,4 @@
+
+#ansible all -m ping -i inventory.ini
+
+#ansible-playbook site.yml -i inventory.ini --extra-vars="deploy_v=2.6"

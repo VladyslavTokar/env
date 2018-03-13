@@ -1,0 +1,7 @@
+---
+- hosts: loadbalancers
+  become: true
+  roles:
+    - timezone
+    - nginx
+    - nginx-lb

@@ -1,0 +1,16 @@
+---
+#- import_playbook: lb.yml
+
+#- import_playbook: app.yml
+
+#- import_playbook: jenkins.yml
+
+#- import_playbook: nfs-srv.yml
+
+# import_playbook: nfs-clt.yml
+
+#- import_playbook: artifactory.yml
+
+#- import_playbook: app-build.yml
+
+- import_playbook: app-deploy.yml

@@ -1,0 +1,13 @@
+upstream javaapp {
+{% for host in groups['appservers'] %}
+    server {{ hostvars[host].ansible_host }}:8080;
+{% endfor %}
+}
+
+server {
+    listen 80;
+
+    location / {
+    proxy_pass http://javaapp;
+    }
+}

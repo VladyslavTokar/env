@@ -1,0 +1,7 @@
+---
+- hosts: appservers
+  become: true
+  roles:
+    - timezone
+    - java
+    - tomcat

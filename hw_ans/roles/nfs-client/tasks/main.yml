@@ -1,0 +1,20 @@
+---
+- name: ensure "nfs" installed
+  yum:
+    name: nfs-utils
+    state: present
+
+- file:
+    path: "{{ nfs_mountdir_cl }}"
+    state: directory
+    owner: nfsnobody
+    group: nfsnobody
+    mode: 0777
+
+- name: Mount NFS
+  mount:
+    path: "{{ nfs_mountdir_cl }}"
+    src: "{{ hostvars['nfs'].ansible_host }}:{{ nfs_mountdir_srv }}"
+    fstype: nfs
+    opts: rw,sync,hard,intr
+    state: mounted

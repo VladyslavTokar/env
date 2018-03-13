@@ -1,0 +1,3 @@
+---
+- name: exportfs
+  shell: exportfs -a

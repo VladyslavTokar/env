@@ -1,0 +1,5 @@
+---
+- hosts: buildsrv_appsrv:children
+  become: true
+  roles:
+    - nfs-client

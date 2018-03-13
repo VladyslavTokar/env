@@ -1,0 +1,5 @@
+---
+- name: ensure "java" present
+  yum:
+    name: java
+    state: present

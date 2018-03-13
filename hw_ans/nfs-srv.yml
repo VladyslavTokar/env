@@ -1,0 +1,6 @@
+---
+- hosts: nfsservers
+  become: true
+  roles:
+  - timezone
+  - nfs-server

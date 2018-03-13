@@ -1,0 +1,7 @@
+---
+- hosts: artifactoryservers
+  become: true
+  roles:
+    - timezone
+    - java
+    - artifactory

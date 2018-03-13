@@ -1,0 +1,28 @@
+---
+- name: ensure "nfs" installed
+  yum:
+    name: nfs-utils
+    state: present
+
+- name: ensure "nfs-server" started
+  service:
+    name: nfs-server
+    state: started
+    enabled: yes
+
+- file:
+    path: {{ nfs_mountdir_srv }}"
+    state: directory
+    owner: nfsnobody
+    group: nfsnobody
+    mode: 0755
+
+- name: add conf to /etc/exports
+  template:
+    src: exports.j2
+    dest: /etc/exports
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+    - exportfs

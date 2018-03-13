@@ -1,0 +1,5 @@
+---
+- hosts: mvn
+  become: false
+  roles:
+    - app-build

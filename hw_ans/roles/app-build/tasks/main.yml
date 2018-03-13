@@ -1,0 +1,5 @@
+---
+- name: Change the working directory to /vagrant
+  shell: "mvn clean deploy -Drevision={{ deploy_v }}"
+  args:
+    chdir: /vagrant
