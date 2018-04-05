@@ -30,3 +30,5 @@
 
 - name: Start Tomcat
   shell: /apps/tools/tomcat/bin/startup.sh
+  register: tomcat
+- debug: var=tomcat.stdout_lines
