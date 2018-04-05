@@ -8,6 +8,12 @@
     username: "{{ mvn_repo_user }}"
     password: "{{ mvn_repo_pass }}"
     dest: "{{ tc_webapp_dir }}/ROOT.war"
+
+- name: user
+  shell: whoami
+  
+- name: test
+  shell: echo $JAVA_HOME
     
 - name: Stop Tomcat
   shell: /apps/tools/tomcat/bin/shutdown.sh
