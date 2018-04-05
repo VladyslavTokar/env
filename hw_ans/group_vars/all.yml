@@ -1,11 +1,6 @@
 ---
 ansible_user: vagrant
 
-nfs_mountdir_cl: "/mnt/share"
-nfs_mountdir_srv: "/srv/share"
-
-time_zone: "Europe/Kiev"
-
 #pom param
 mvn_group_id: "hello-world"
 mvn_artifact_id: "hw"
@@ -14,6 +9,6 @@ mvn_artifact_id: "hw"
 mvn_repo_user: "artuser"
 mvn_repo_pass: "1q2w3e4r"
 mvn_repo_addr: "{{ hostvars['art'].ansible_host }}"
-mvn_repo_url: "http://{{ mvn_repo_addr }}:8081/artifactory/libs-release-local"
+mvn_repo_url: "http://{{ mvn_repo_addr }}:8081/artifactory/mvn"
 
-tc_webapp_dir: "/usr/share/tomcat/webapps"
+tc_webapp_dir: "/apps/tools/tomcat/webapps"
