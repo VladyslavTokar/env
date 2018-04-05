@@ -23,7 +23,7 @@
   shell: /apps/tools/tomcat/bin/shutdown.sh
 
 - name: rm old ver.
-  shell: rm -f "{{ tc_webapp_dir }}/ROOT"
+  shell: rm -rf "{{ tc_webapp_dir }}/ROOT"
 
 - pause:
     seconds: 5
