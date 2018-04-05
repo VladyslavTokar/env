@@ -1,6 +1,6 @@
 ---
 - name: Stop Tomcat
-  shell: /apps/tools/tomcat/bin/shutdown.sh
+  shell: "nohup /apps/tools/tomcat/bin/shutdown.sh"
 
 - name: rm old ver.
   shell: rm -rf "{{ tc_webapp_dir }}/ROOT"
@@ -29,6 +29,6 @@
  
 
 - name: Start Tomcat
-  shell: /apps/tools/tomcat/bin/startup.sh
+  shell: "nohup /apps/tools/tomcat/bin/startup.sh"
   register: tomcat
 - debug: var=tomcat.stdout_lines
