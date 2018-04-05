@@ -2,6 +2,6 @@
 - hosts: appsrv
   become: false
   vars:
-    JAVA_HOME: "/apps/tools/java/bin"
+    JAVA_HOME: "/apps/tools/java"
   roles:
     - app-deploy
