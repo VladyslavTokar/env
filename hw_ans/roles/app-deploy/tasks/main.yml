@@ -12,8 +12,8 @@
 - name: user
   shell: whoami
   register: whoami
-  
-  
+- debug: var=whoami.stdout_lines  
+
 - name: test
   shell: echo $JAVA_HOME
   register: java
