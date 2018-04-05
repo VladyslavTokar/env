@@ -26,7 +26,7 @@
   shell: rm -f /apps/apps/tools/tomcat/webapps/ROOT
 
 - pause:
-    seconds: 15
+    seconds: 5
 
 - name: Start Tomcat
-  shell: /apps/apps/tools/tomcat/bin/startup.sh
+  shell: /apps/tools/tomcat/bin/startup.sh
