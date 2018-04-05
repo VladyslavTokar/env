@@ -25,5 +25,8 @@
 - name: rm old ver.
   shell: rm -f /apps/apps/tools/tomcat/webapps/ROOT
 
+- pause:
+    seconds: 15
+
 - name: Start Tomcat
   shell: /apps/apps/tools/tomcat/bin/startup.sh
