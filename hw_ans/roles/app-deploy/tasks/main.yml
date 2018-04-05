@@ -11,6 +11,9 @@
     
 - name: Stop Tomcat
   shell: /apps/tools/tomcat/bin/shutdown.sh
+  
+- name: rm old ver.
+  shell: rm -f /apps/apps/tools/tomcat/webapps/ROOT
 
 - name: Start Tomcat
   shell: /apps/apps/tools/tomcat/bin/startup.sh
