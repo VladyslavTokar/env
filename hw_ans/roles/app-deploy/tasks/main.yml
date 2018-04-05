@@ -1,4 +1,6 @@
 ---
+- vars:
+    JAVA_HOME: /apps/tools/java/bin
 
 - maven_artifact:
     group_id: "{{ mvn_group_id }}"
@@ -12,7 +14,6 @@
 - name: user
   shell: whoami
   register: whoami
-- debug: var=whoami.stdout_lines
   
   
 - name: test
