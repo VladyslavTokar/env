@@ -1,5 +1,5 @@
 ---
-
+  
 - maven_artifact:
     group_id: "{{ mvn_group_id }}"
     artifact_id: "{{ mvn_artifact_id }}"
@@ -18,12 +18,12 @@
   shell: echo $JAVA_HOME
   register: java
 - debug: var=java.stdout_lines
-    
+ 
 - name: Stop Tomcat
   shell: /apps/tools/tomcat/bin/shutdown.sh
-  
+
 - name: rm old ver.
-  shell: rm -f /apps/apps/tools/tomcat/webapps/ROOT
+  shell: rm -f "{{ tc_webapp_dir }}/ROOT"
 
 - pause:
     seconds: 5
