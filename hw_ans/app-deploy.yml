@@ -1,5 +1,5 @@
 ---
 - hosts: appsrv
-  become: true
+  become: false
   roles:
     - app-deploy
