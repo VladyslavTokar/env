@@ -1,5 +1,13 @@
 ---
-  
+- name: Stop Tomcat
+  shell: /apps/tools/tomcat/bin/shutdown.sh
+
+- name: rm old ver.
+  shell: rm -rf "{{ tc_webapp_dir }}/ROOT"
+
+- pause:
+    seconds: 10
+
 - maven_artifact:
     group_id: "{{ mvn_group_id }}"
     artifact_id: "{{ mvn_artifact_id }}"
@@ -19,14 +27,6 @@
   register: java
 - debug: var=java.stdout_lines
  
-- name: Stop Tomcat
-  shell: /apps/tools/tomcat/bin/shutdown.sh
-
-- name: rm old ver.
-  shell: rm -rf "{{ tc_webapp_dir }}/ROOT"
-
-- pause:
-    seconds: 10
 
 - name: Start Tomcat
   shell: /apps/tools/tomcat/bin/startup.sh
