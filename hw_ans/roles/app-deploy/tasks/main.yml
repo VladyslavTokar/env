@@ -1,4 +1,5 @@
 ---
+
 - maven_artifact:
     group_id: "{{ mvn_group_id }}"
     artifact_id: "{{ mvn_artifact_id }}"
@@ -7,3 +8,9 @@
     username: "{{ mvn_repo_user }}"
     password: "{{ mvn_repo_pass }}"
     dest: "{{ tc_webapp_dir }}/ROOT.war"
+    
+- name: Stop Tomcat
+  shell: /apps/tools/tomcat/bin/shutdown.sh
+
+- name: Start Tomcat
+  shell: /apps/apps/tools/tomcat/bin/startup.sh
